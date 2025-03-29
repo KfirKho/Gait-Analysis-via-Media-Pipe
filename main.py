@@ -19,7 +19,7 @@ def calculate_angle(a,b,c):
         
     return angle 
 
-cap = cv2.VideoCapture(r"C:\Users\Kfir\Documents\Gait Analysis via Media Pipe\walking_skeleton_slowed.mp4")
+cap = cv2.VideoCapture(r"walking_skeleton_slowed.mp4")
 ## Setup mediapipe instance
 with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
     while cap.isOpened():
