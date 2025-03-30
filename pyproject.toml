@@ -9,9 +9,25 @@ dependencies = [
     "mediapipe>=0.10.21",
     "opencv-python>=4.11.0.86",
     "ultralytics>=8.3.98",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
 ]
 
 [dependency-groups]
 dev = [
     "ruff>=0.11.2",
 ]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu124", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
